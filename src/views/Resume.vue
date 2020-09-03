@@ -1,5 +1,15 @@
 <template>
-  <div class="about">
-    <h1>Resume page</h1>
-  </div>
+  <v-container>
+    <h1>Resume</h1>
+    <h2>
+      Work in progress atm, after finish this page make this all mobile
+      compatible
+    </h2>
+  </v-container>
 </template>
+
+<script>
+export default {};
+</script>
+
+<style scoped></style>
