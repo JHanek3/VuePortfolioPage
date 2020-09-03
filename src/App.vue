@@ -1,16 +1,23 @@
 <template>
   <v-app>
-    <Home />
+    <Navbar />
+    <v-content>
+      <router-view></router-view>
+    </v-content>
+    <Footer />
   </v-app>
 </template>
 
 <script>
-import Home from "@/views/Home.vue";
+import Navbar from "./components/Navbar.vue";
+import Footer from "./components/Footer.vue";
+
 export default {
   name: "App",
 
   components: {
-    Home,
+    Navbar,
+    Footer,
   },
 
   data: () => ({
