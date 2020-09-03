@@ -36,15 +36,21 @@ export default new Vuex.Store({
       },
       {
         label: "Login Page",
-        url: "",
+        url: "/login",
         para:
-          "Simple user login page, first time using Vuetify. Page has the ability to turn on and off the visibility of the password.",
+          "Simple user login page, first time using Vuetify. Toggles password visibility, does not save information.",
       },
       {
         label: "Form Validation",
-        url: "",
+        url: "/signup",
         para:
-          "Vuetify made Form Submission page. Button is disabled if the form is not correct, the form also shows error messages for corresponding fields.",
+          "Vuetify made Form Submission page, doesn't save info. Button is disabled if the form is incorrect, the form also shows error messages for corresponding fields.",
+      },
+      {
+        label: "Dashboard",
+        url: "/dashboard",
+        para:
+          "Vuetify filled dashboard with a variety of components like an interactive table, timeline, and a couple of graphs.",
       },
     ],
     todos: [
