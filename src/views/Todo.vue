@@ -1,5 +1,5 @@
 <template>
-  <v-container class="container mt-4">
+  <v-container class="todoContainer">
     <v-row>
       <v-col>
         <h1>To-Do List</h1>
@@ -21,23 +21,6 @@
       </v-col>
     </v-row>
   </v-container>
-  <!-- <div class="container">
-    <h1>To-Do List</h1>
-    <h2 v-if="countIncomplete() > 1">
-      Right now you have {{ countIncomplete() }} tasks left
-    </h2>
-    <h2 v-if="countIncomplete() === 1">
-      Right now you have {{ countIncomplete() }} task left
-    </h2>
-    <h2 v-else>
-      You're all done!
-    </h2>
-    <div id="app">
-      <TodoList />
-      <TodoNew />
-    </div>
-  </div> -->
-  <!-- <img src="~@/assets/logo.png" class="vue-logo" alt="Vue.js Logo" /> -->
 </template>
 
 <script>
@@ -73,7 +56,7 @@ html {
   font-family: "Open Sans", sans-serif;
 }
 
-.container {
+.todoContainer {
   font-family: "Open Sans", sans-serif;
   width: 24rem;
   margin: auto;

@@ -9,22 +9,27 @@ export default new Vuex.Store({
       {
         label: "Home",
         url: "/",
-      },
-      {
-        label: "Resume",
-        url: "/resume",
+        icon: "mdi-home",
       },
       {
         label: "Projects",
         url: "/projects",
+        icon: "mdi-code-tags",
       },
       {
         label: "GitHub",
         url: "https://github.com/JHanek3",
+        icon: "mdi-github",
       },
       {
         label: "LinkedIn",
         url: "https://www.linkedin.com/in/jonathon-hanek-731230177/",
+        icon: "mdi-linkedin",
+      },
+      {
+        label: "My Old Non-Vue Website",
+        url: "http://hanekpro.com/",
+        icon: "mdi-web",
       },
     ],
     projects: [
@@ -44,13 +49,13 @@ export default new Vuex.Store({
         label: "Form Validation",
         url: "/signup",
         para:
-          "Vuetify made Form Submission page, doesn't save info. Button is disabled if the form is incorrect, the form also shows error messages for corresponding fields.",
+          "Vuetify Form Submission page, doesn't save info. Form incorrect, button is disabled and displays errors.",
       },
       {
         label: "Dashboard",
         url: "/dashboard",
         para:
-          "Vuetify filled dashboard with a variety of components like an interactive table, timeline, and a couple of graphs.",
+          "Vuetify filled dashboard with a variety data of like an interactive table, timeline, and a couple of graphs.",
       },
     ],
     todos: [
@@ -68,6 +73,67 @@ export default new Vuex.Store({
         id: 3,
         task: "Workout",
         completed: false,
+      },
+    ],
+    certs: [
+      "Beginner Full Stack Web Development",
+      "JavaScript Fundamentals",
+      "Advanced and Object Oriented JavaScript and ES6",
+      "JS, Bootstrap, & PHP for beginners",
+      "Angular Crash Course",
+      "Completed SQLZOO",
+      "Scrimba React Bootcamp",
+      "Vue Mastery Beginner Path",
+      "Python For Everybody Full Completion",
+    ],
+    skills: [
+      {
+        label: "HTML5",
+        value: "90",
+      },
+      {
+        label: "JavaScript",
+        value: "80",
+      },
+      {
+        label: "ReactJS",
+        value: "75",
+      },
+      {
+        label: "Bootstrap",
+        value: "75",
+      },
+      {
+        label: "Vue",
+        value: "65",
+      },
+      {
+        label: "Vuex",
+        value: "65",
+      },
+      {
+        label: "Vuetify",
+        value: "65",
+      },
+      {
+        label: "Python",
+        value: "70",
+      },
+      {
+        label: "Django",
+        value: "10",
+      },
+      {
+        label: "NodeJS",
+        value: "80",
+      },
+      {
+        label: "Express",
+        value: "80",
+      },
+      {
+        label: "SQL",
+        value: "75",
       },
     ],
   },
@@ -105,6 +171,8 @@ export default new Vuex.Store({
     getLinks: (state) => state.links,
     getProjects: (state) => state.projects,
     getTodos: (state) => state.todos,
+    getCerts: (state) => state.certs,
+    getSkills: (state) => state.skills,
     countIncomplete: (state) => {
       return state.todos.filter((task) => task.completed === false).length;
     },

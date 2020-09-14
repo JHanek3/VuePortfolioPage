@@ -21,7 +21,9 @@ export default {
   name: "Footer",
   computed: {
     links() {
-      return this.$store.getters.getLinks;
+      return this.$store.getters.getLinks.filter(
+        (i) => i.label !== "My Old Non-Vue Website"
+      );
     },
   },
 };

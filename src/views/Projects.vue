@@ -3,8 +3,8 @@
     <v-container class="headers">
       <h1>Projects</h1>
       <h2>
-        These are just my vue projects my React projects can be found here(dead
-        link)
+        These are just my Vue projects, my React projects can be found
+        <a href="http://hanekpro.com/projects.html">here</a>
       </h2>
     </v-container>
     <v-container>
@@ -13,17 +13,18 @@
           v-for="project in projects"
           :key="`${project.label}`"
           cols="12"
-          md="4"
+          lg="4"
+          md="6"
           xs="12"
         >
-          <v-card :project="project" class="mx-auto mt-5">
-            <v-card-title>
+          <v-card :project="project" class="mx-auto" height="185">
+            <v-card-title height="10%">
               {{ project.label }}
             </v-card-title>
-            <v-card-text>
+            <v-card-text height="90%">
               {{ project.para }}
             </v-card-text>
-            <v-btn class="ml-1 mb-1" color="primary" :href="project.url"
+            <v-btn absolute left bottom color="primary" :href="project.url"
               >Link</v-btn
             >
           </v-card>
