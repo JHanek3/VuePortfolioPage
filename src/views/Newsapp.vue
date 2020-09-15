@@ -10,6 +10,22 @@
     ></SideMenu>
     <v-main>
       <v-container fluid>
+        <p>
+          THESE BUTTHEADS ONLY ALLOW THE API TO RUN FREELY THROUGH LOCALHOST
+          REQUESTS, NOW THAT I'VE DEPLOYED THE REQUEST FAILS TO LOAD, ERR 426.
+          THE CHEAPEST PLAN IS 449$ PER MONTH, GREAT VALUE FOR A PRACTICE
+          PROJECT THAT WILL GET A WHOLE 2 CLICKS. I'LL REDO THE API CALL SOON,
+          CODE IS
+          <a
+            href="https://github.com/JHanek3/VuePortfolioPage/tree/master/src/components/Newsapp"
+            >HERE</a
+          >
+          AND
+          <a
+            href="https://github.com/JHanek3/VuePortfolioPage/blob/master/src/views/Newsapp.vue"
+            >HERE</a
+          >
+        </p>
         <MainContent :articles="articles"></MainContent>
       </v-container>
     </v-main>
