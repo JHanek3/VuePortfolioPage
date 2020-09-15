@@ -57,6 +57,12 @@ export default new Vuex.Store({
         para:
           "Vuetify filled dashboard with a variety data of like an interactive table, timeline, and a couple of graphs.",
       },
+      {
+        label: "Newsapp",
+        url: "/newsapp",
+        para:
+          "Vuetify news app, that makes api calls using axios. Left sidebar menu filters based on news source.",
+      },
     ],
     todos: [
       {

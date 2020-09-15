@@ -1,16 +1,14 @@
 <template>
   <v-container>
-    <v-container>
-      <Header />
-      <v-row>
-        <v-col cols="12" md="4" height="100%">
-          <Sidebar align="center" justify="center" />
-        </v-col>
-        <v-col cols="12" md="8">
-          <Content />
-        </v-col>
-      </v-row>
-    </v-container>
+    <Header />
+    <v-row>
+      <v-col cols="12" md="4" height="100%">
+        <Sidebar align="center" justify="center" />
+      </v-col>
+      <v-col cols="12" md="8">
+        <Content />
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
