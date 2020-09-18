@@ -63,6 +63,12 @@ export default new Vuex.Store({
         para:
           "Vuetify news app, that makes api calls using axios. Left sidebar menu filters based on news source.",
       },
+      {
+        label: "Python Django Blog",
+        url: "https://hanekj25.pythonanywhere.com/",
+        para:
+          "Python Django backend. Coded along to the Python Django Girls tutorial to understand how Django works and further my understanding.",
+      },
     ],
     todos: [
       {
