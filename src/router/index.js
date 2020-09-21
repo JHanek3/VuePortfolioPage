@@ -40,6 +40,11 @@ const routes = [
     name: "Newsapp",
     component: () => import("../views/Newsapp.vue"),
   },
+  {
+    path: "/quickmap",
+    name: "Quickmap",
+    component: () => import("../views/Quickmap.vue"),
+  },
 ];
 
 const router = new VueRouter({

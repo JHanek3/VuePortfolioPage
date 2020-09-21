@@ -69,6 +69,12 @@ export default new Vuex.Store({
         para:
           "Python Django backend. Coded along to the Python Django Girls tutorial to understand how Django works and further my understanding.",
       },
+      {
+        label: "Leaflet Map Tutorial",
+        url: "/quickmap",
+        para:
+          "Worked through the quick start guide for leaflet. Not properly written to operate in Vue, will fix by next project.",
+      },
     ],
     todos: [
       {

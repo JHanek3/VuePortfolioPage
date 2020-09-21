@@ -1,7 +1,9 @@
-Add leaflet and configure
 Add vue to your old page and linkedin and resume or coverletter fuck wherever its suppose to go
 
 Done:
 Add new project and configure hide api key
   still have an error with filter and no idea how to fix it
+Add leaflet and configure
+  did leaflet tutorial, except for event emits turns out my app template is wrong
+  oh well, fix it in the next tutorial
   
