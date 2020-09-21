@@ -4,6 +4,7 @@ node_modules
 .env
 bugs.txt
 notes.txt
+# /src/views/Quickmap.vue
 
 # local env files
 .env.local

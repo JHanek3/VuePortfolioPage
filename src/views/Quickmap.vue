@@ -28,7 +28,8 @@ export default {
             'Map data (c) <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
           maxZoom: 18,
           id: "mapbox/streets-v11",
-          accessToken: this.mapToken,
+          accessToken:
+            "pk.eyJ1IjoiaGFuZWtqMjUiLCJhIjoiY2tmOG16Ym9nMGFhdjMwbzhvcHV1a243aiJ9.C1eis2gkTZcmyYEVsMyjCQ",
         }
       ).addTo(mapDiv);
       //Make a marker, circle, and polygon
