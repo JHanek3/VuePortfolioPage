@@ -70,6 +70,12 @@ export default new Vuex.Store({
           "Python Django backend. Coded along to the Python Django Girls tutorial to understand how Django works and further my understanding.",
       },
       {
+        label: "Python Django Official Docs",
+        url: "https://github.com/JHanek3/Djagno-Docs",
+        para: 
+        "This is just proof for working through the Docs beginner tutorial. Didn't bother to deploy, link is just source code."
+      },
+      {
         label: "Leaflet Map Tutorial",
         url: "/quickmap",
         para:
