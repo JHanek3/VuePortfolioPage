@@ -82,6 +82,12 @@ export default new Vuex.Store({
         para:
           "Worked through the quick start guide for leaflet. Not properly written to operate in Vue, will fix by next project.",
       },
+      {
+        label: "Leaflet Chicago Breweries",
+        url: "/breweries",
+        para:
+          "API call to get list and map of some Chicago Brewries. Hover on list to trigger increase icon size broke, fix later.",
+      },
     ],
     todos: [
       {
