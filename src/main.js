@@ -5,6 +5,7 @@ import router from "./router";
 import vuetify from "./plugins/vuetify";
 import store from "./store";
 import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 
 Vue.config.productionTip = false;
 

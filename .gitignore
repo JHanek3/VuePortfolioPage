@@ -5,6 +5,7 @@ node_modules
 bugs.txt
 notes.txt
 # /src/views/Quickmap.vue
+/src/components/Brews/BrewMap.vue
 
 # local env files
 .env.local

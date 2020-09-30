@@ -45,6 +45,11 @@ const routes = [
     name: "Quickmap",
     component: () => import("../views/Quickmap.vue"),
   },
+  {
+    path: "/breweries",
+    name: "Breweries",
+    component: () => import("../views/Brew.vue"),
+  },
 ];
 
 const router = new VueRouter({

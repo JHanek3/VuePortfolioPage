@@ -1,3 +1,4 @@
+// import Axios from "axios";
 import Vue from "vue";
 import Vuex from "vuex";
 
@@ -72,8 +73,8 @@ export default new Vuex.Store({
       {
         label: "Python Django Official Docs",
         url: "https://github.com/JHanek3/Djagno-Docs",
-        para: 
-        "This is just proof for working through the Docs beginner tutorial. Didn't bother to deploy, link is just source code."
+        para:
+          "This is just proof for working through the Docs beginner tutorial. Didn't bother to deploy, link is just source code.",
       },
       {
         label: "Leaflet Map Tutorial",
