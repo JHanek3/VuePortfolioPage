@@ -6,7 +6,7 @@
         <p>
           Self-Taught Web Developer with a background in BioChemistry. My degree
           in BioChemistry has provided me with a wide array of analytical and
-          problem-solving skills that help with web development No Industry
+          problem-solving skills that has helped with my web development journey. No Industry
           experience as of yet, looking to get into the field. I specialize in
           ReactJS, but a potential job opportunity arose so I decided to create
           this page along with some projects to get my feet wet with the

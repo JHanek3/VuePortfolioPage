@@ -1,5 +1,3 @@
-Add vue to your old page and linkedin and resume or coverletter fuck wherever its suppose to go
-
 Done:
 Add new project and configure hide api key
   still have an error with filter and no idea how to fix it

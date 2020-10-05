@@ -152,7 +152,7 @@ export default new Vuex.Store({
       },
       {
         label: "Django",
-        value: "10",
+        value: "25",
       },
       {
         label: "NodeJS",
