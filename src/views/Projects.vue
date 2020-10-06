@@ -4,7 +4,7 @@
       <h1>Projects</h1>
       <h2>
         These are just my Vue projects, my React projects can be found
-        <a href="https://hanekreact.herokuapp.com/">here</a>
+        <a href="https://hanekreact.herokuapp.com/projects">here</a>
       </h2>
     </v-container>
     <v-container>
