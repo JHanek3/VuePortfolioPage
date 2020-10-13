@@ -1,8 +1,16 @@
-// import Axios from "axios";
 import Vue from "vue";
 import Vuex from "vuex";
 
+
+//after installing axiox and vue-axios import into the store
+// import axios from 'axios'
+// import VueAxios from 'vue-axios'
+
 Vue.use(Vuex);
+//This after imports, added jokes array to state
+// Vue.use(VueAxios, axios)
+//Importing did not work, instead we used Vue.axios.get and now it works
+
 
 export default new Vuex.Store({
   state: {
@@ -63,6 +71,12 @@ export default new Vuex.Store({
         url: "/newsapp",
         para:
           "Vuetify news app, that makes api calls using axios. Left sidebar menu filters based on news source.",
+      },
+      {
+        label: "Joke API",
+        url: "/jokes",
+        para:
+          "Proper API call developed project, after the blunder of the news app. Also found fix for the BrewList icons.",
       },
       {
         label: "Python Django Blog",
@@ -167,6 +181,7 @@ export default new Vuex.Store({
         value: "75",
       },
     ],
+    jokes: [],
   },
   mutations: {
     ADD_TODO: (state, payload) => {
@@ -185,6 +200,25 @@ export default new Vuex.Store({
       const index = state.todos.findIndex((todo) => todo.id === payload);
       state.todos.splice(index, 1);
     },
+    //now need a mutation to set our jokes, state parameter that hits jokes
+    //payload parameter just holds our stuff
+    SET_JOKES (state, payload) {
+      state.jokes = payload
+    },
+
+    //toggling the showing of the puncline here
+    SHOW_PUNCH (state, payload) {
+      const thePunch = state.jokes.filter((joke) => joke.id === payload)
+      // console.log(thePunch)
+      // console.log(thePunch[0].expand)
+      // console.log("Time to toggle")
+      thePunch[0].expand = !thePunch[0].expand
+      // thePunch.expand = !thePunch.expand;
+      // console.log(thePunch[0].expand)
+
+      // i have no idea why its @ thePunch[0], would probably explain
+      //the cant expand on 0 error, just debug with logs and vue devtools on chrome
+    }
   },
   actions: {
     addTodo: (context, payload) => {
@@ -196,6 +230,26 @@ export default new Vuex.Store({
     deleteTodo: (context, payload) => {
       context.commit("DELETE_TODO", payload);
     },
+    //after mutation time for action
+    loadJokes ({ commit }) {
+      Vue.axios
+        .get('https://official-joke-api.appspot.com/random_ten')
+        //this is where you would put headers
+        .then(response => response.data)
+        .then(jokes => {
+          // this was added for the ability to toggle one punchline at a time
+          jokes.map(r => {
+            r.expand = false
+          })
+          console.log(jokes)
+        //commit the mutation to the data
+        commit('SET_JOKES', jokes)
+        })
+    },
+    //this is our toggle action, to show the punchline on the click of a btn
+    togglePunch: (context, payload) => {
+      context.commit("SHOW_PUNCH", payload)
+    }
   },
   modules: {},
   getters: {
@@ -207,5 +261,7 @@ export default new Vuex.Store({
     countIncomplete: (state) => {
       return state.todos.filter((task) => task.completed === false).length;
     },
+    //add getter for our jokes array, then make a mutation
+    getJokes: (state) => state.jokes
   },
 });

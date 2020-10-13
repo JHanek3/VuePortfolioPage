@@ -3,7 +3,7 @@ import "./plugins/axios";
 import App from "./App.vue";
 import router from "./router";
 import vuetify from "./plugins/vuetify";
-import store from "./store";
+import store from "./store/index";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 

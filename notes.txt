@@ -4,4 +4,4 @@ Add new project and configure hide api key
 Add leaflet and configure
   did leaflet tutorial, except for event emits turns out my app template is wrong
   oh well, fix it in the next tutorial
-  
+Add React link in navbar  
