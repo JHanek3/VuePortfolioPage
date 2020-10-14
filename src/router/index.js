@@ -53,7 +53,7 @@ const routes = [
   {
     path: "/breweries",
     name: "Breweries",
-    component: () => import("../views/Brew.vue"),
+    component: () => import("../views/rBrew.vue"),
   },
 ];
 

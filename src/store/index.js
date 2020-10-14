@@ -182,6 +182,7 @@ export default new Vuex.Store({
       },
     ],
     jokes: [],
+    brews: [],
   },
   mutations: {
     ADD_TODO: (state, payload) => {
@@ -205,6 +206,9 @@ export default new Vuex.Store({
     SET_JOKES (state, payload) {
       state.jokes = payload
     },
+    SET_BREWS (state, payload) {
+      state.brews = payload
+    },
 
     //toggling the showing of the puncline here
     SHOW_PUNCH (state, payload) {
@@ -218,6 +222,16 @@ export default new Vuex.Store({
 
       // i have no idea why its @ thePunch[0], would probably explain
       //the cant expand on 0 error, just debug with logs and vue devtools on chrome
+    },
+    ENLARGE_ICON (state, payload) {
+      const theIcon = state.brews.filter((brew) => brew.id === payload)
+      // console.log(theIcon)
+      // console.log(theIcon[0].iconSize)
+      theIcon[0].iconSize = [60,60]
+    },
+    DELARGE_ICON (state, payload) {
+      const theIcon = state.brews.filter((brew) => brew.id === payload)
+      theIcon[0].iconSize = [40, 40]
     }
   },
   actions: {
@@ -249,7 +263,30 @@ export default new Vuex.Store({
     //this is our toggle action, to show the punchline on the click of a btn
     togglePunch: (context, payload) => {
       context.commit("SHOW_PUNCH", payload)
-    }
+    },
+    loadBrews ({ commit }) {
+      Vue.axios
+        .get("https://api.openbrewerydb.org/breweries?by_city=chicago&per_page=50")
+        .then(response => response.data)
+        .then(brews => {
+          //filter out all of the bad lat and lngs responses
+          let clean = brews.filter(r => r.latitude !== null)
+          //added on our necessary properties like iconSize and latlng 
+          clean.map(r => {
+            r.latLng = [r.latitude, r.longitude]
+            r.iconSize = [40, 40]
+            // r.lIconSize = [60, 60]
+          })
+          // console.log(clean)
+        commit('SET_BREWS', clean)
+        })
+      },
+      enlargeIcon: (context, payload) => {
+        context.commit("ENLARGE_ICON", payload)
+      },
+      delargeIcon: (context, payload) => {
+        context.commit("DELARGE_ICON", payload)
+      }
   },
   modules: {},
   getters: {
@@ -262,6 +299,7 @@ export default new Vuex.Store({
       return state.todos.filter((task) => task.completed === false).length;
     },
     //add getter for our jokes array, then make a mutation
-    getJokes: (state) => state.jokes
+    getJokes: (state) => state.jokes,
+    getBrews: (state) => state.brews
   },
 });
