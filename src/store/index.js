@@ -100,7 +100,7 @@ export default new Vuex.Store({
         label: "Leaflet Chicago Breweries",
         url: "/breweries",
         para:
-          "API call to get list and map of some Chicago Brewries. Hover on list to trigger increase icon size broke, fix later.",
+          "API call to get list and map of some Chicago Brewries. Hover on list to trigger increase icon size fixed, solution found in jokes.",
       },
     ],
     todos: [

@@ -19,11 +19,6 @@
     <v-row>
       <v-col cols="6">
         <rBrewList/>
-        <!-- <BrewList
-          :clean="clean"
-          @mouse-over-brew="mouseOverBrew"
-          @mouse-left-brew="mouseLeftBrew"
-        /> -->
       </v-col>
       <v-col cols="6">
         <rBrewMap/>
