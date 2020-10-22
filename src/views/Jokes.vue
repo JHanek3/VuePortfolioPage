@@ -35,7 +35,7 @@
 
 <script>
 export default {
-  name: 'App',
+  name: 'Jokes',
   computed: {
     //put our store data into computed, i think it makes it easier to be mutable when calling APIs
     jokes() {

@@ -91,6 +91,11 @@ export default new Vuex.Store({
           "This is just proof for working through the Docs beginner tutorial. Didn't bother to deploy, link is just source code.",
       },
       {
+        label: "Django API",
+        url: "/heroes",
+        para: "Create my own API with a Django backend. All it process is a GET request, link displays the API data."
+      },
+      {
         label: "Leaflet Map Tutorial",
         url: "/quickmap",
         para:
@@ -182,6 +187,7 @@ export default new Vuex.Store({
       },
     ],
     jokes: [],
+    heroes: [],
     brews: [],
   },
   mutations: {
@@ -205,6 +211,9 @@ export default new Vuex.Store({
     //payload parameter just holds our stuff
     SET_JOKES (state, payload) {
       state.jokes = payload
+    },
+    SET_HEROES (state, payload) {
+      state.heroes = payload
     },
     SET_BREWS (state, payload) {
       state.brews = payload
@@ -264,6 +273,15 @@ export default new Vuex.Store({
     togglePunch: (context, payload) => {
       context.commit("SHOW_PUNCH", payload)
     },
+    loadHeroes({ commit }) {
+      Vue.axios
+        .get('https://hanekapi.herokuapp.com/heroes/')
+        .then(response => response.data)
+        .then(heroes => {
+          console.log(heroes)
+          commit('SET_HEROES', heroes)
+        })
+    },
     loadBrews ({ commit }) {
       Vue.axios
         .get("https://api.openbrewerydb.org/breweries?by_city=chicago&per_page=50")
@@ -300,6 +318,7 @@ export default new Vuex.Store({
     },
     //add getter for our jokes array, then make a mutation
     getJokes: (state) => state.jokes,
+    getHeroes: (state) => state.heroes,
     getBrews: (state) => state.brews
   },
 });
