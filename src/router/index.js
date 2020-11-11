@@ -1,6 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import Ostore from "../views/Ostore.vue"
+import Oproduct from "../views/Oproduct.vue"
+import Ocart from "../views/Ocart.vue"
 
 Vue.use(VueRouter);
 
@@ -59,6 +62,21 @@ const routes = [
     path: '/heroes',
     name: "Heroes",
     component: () => import("../views/Heroes.vue")
+  },
+  {
+    path: '/store',
+    name: "Store",
+    component: Ostore
+  },
+  {
+    path: '/store/:id',
+    name: 'Oproduct',
+    component: Oproduct
+  },
+  {
+    path: '/cart/',
+    name: 'Cart',
+    component: Ocart
   }
 ];
 

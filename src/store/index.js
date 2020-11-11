@@ -79,6 +79,12 @@ export default new Vuex.Store({
           "Proper API call developed project, after the blunder of the news app. Also found fix for the BrewList icons.",
       },
       {
+        label: "Online Store",
+        url: "/store",
+        para:
+          "Created a small online store with the ablility to add items to cart and view individual product details."
+      },
+      {
         label: "Python Django Blog",
         url: "https://hanekj25.pythonanywhere.com/",
         para:
@@ -93,7 +99,7 @@ export default new Vuex.Store({
       {
         label: "Django API",
         url: "/heroes",
-        para: "Create my own API with a Django backend. All it process is a GET request, link displays the API data."
+        para: "Created my own API with a Django backend. All it process is a GET request, link displays the API data."
       },
       {
         label: "Leaflet Map Tutorial",
@@ -107,6 +113,18 @@ export default new Vuex.Store({
         para:
           "API call to get list and map of some Chicago Brewries. Hover on list to trigger increase icon size fixed, solution found in jokes.",
       },
+      {
+        label: 'LocalLibrary Tutorial',
+        url: 'https://haneklibrary.herokuapp.com/catalog',
+        para: 
+        "Needed a refresher on Node and Express. Followed along to the MDN Node/Express tutorial to generate a Library database with CRUD usage."
+      },
+      {
+        label: "What am I doing now?",
+        url: "",
+        para:
+        "Right now I'm working through The Odin Project subsection on Node and Express for backend. Upon completion I want to start reviewing angular."
+      }
     ],
     todos: [
       {
@@ -189,6 +207,82 @@ export default new Vuex.Store({
     jokes: [],
     heroes: [],
     brews: [],
+    cart: [],
+    products: [
+      {
+        name: "Crewneck T-Shirt",
+        id: 53362,
+        price: 9.99,
+        color: "black",
+        size: "small",
+        gender: "men",
+        quantity: 10,
+        dateAdded: "Tue Mar 24 2015 20:00:00 GMT-0400 (Eastern Daylight Time)",
+        category: "Shirts",
+        details: {
+          material: "cotton",
+          fit: "regular",
+          maintenance: "machine wash",
+          additional: "Some colors feature different-colored yarns for a heathered effect."
+        },
+        images: [
+          '53362-1.jpg',
+          '53362-2.jpg',
+          '53362-3.jpg',
+        ]
+      },
+      {
+        name: "Cardigan Sweater",
+        id: 53363,
+        price: 49.99,
+        color: "red",
+        size: "medium",
+        gender: "women",
+        quantity: 8,
+        dateAdded: "Mon Mar 23 2015 20:00:00 GMT-0400 (Eastern Daylight Time)",
+        category: "Sweaters",
+        details: {
+          material: "cotton",
+          fit: "regular",
+          maintenance: "machine wash cold, air dry",
+          additional: ""
+        },
+        images: [
+          '53363-1.jpg',
+          '53363-2.jpg',
+          '53363-3.jpg',
+          '53363-4.jpg',
+          '53363-5.jpg',
+        ]
+      },
+      {
+        name: "Slim Fit Jeans",
+        id: 53364,
+        price: 29.99,
+        color: "navy",
+        size: {
+          waist: 32,
+          length: 32,
+        },
+        gender: "men",
+        quantity: 5,
+        dateAdded: "Wed Mar 25 2015 20:00:00 GMT-0400 (Eastern Daylight Time)",
+        category: "Pants",
+        details: {
+          material: "denim",
+          fit: "slim",
+          maintenance: "machine wash cold with like colors, air dry",
+          additional: ""
+        },
+        images: [
+          '53364-1.jpg',
+          '53364-2.jpg',
+          '53364-3.jpg',
+          '53364-4.jpg',
+          '53364-5.jpg',
+        ]
+      },
+    ]
   },
   mutations: {
     ADD_TODO: (state, payload) => {
@@ -241,6 +335,21 @@ export default new Vuex.Store({
     DELARGE_ICON (state, payload) {
       const theIcon = state.brews.filter((brew) => brew.id === payload)
       theIcon[0].iconSize = [40, 40]
+    },
+    addToCart(state, payload) {
+      state.cart.push( Number(payload))
+    },
+    removeFromCart (state, payload) {
+      let indexToDelete = state.cart.indexOf( Number(payload) );
+      state.cart.splice(indexToDelete, 1)
+    },
+    decrementProductInventory(state, payload) {
+      let product = state.products.find(product => product.id === Number(payload))
+      product.quantity--;
+    },
+    incrementProductInventory(state, payload) {
+      let product = state.products.find(product => product.id === Number(payload))
+      product.quantity++
     }
   },
   actions: {
@@ -304,6 +413,14 @@ export default new Vuex.Store({
       },
       delargeIcon: (context, payload) => {
         context.commit("DELARGE_ICON", payload)
+      },
+      addToCart({ commit }, payload) {
+        commit('addToCart', payload)
+        commit('decrementProductInventory', payload)
+      },
+      removeFromCart({ commit }, payload) {
+        commit('removeFromCart', payload)
+        commit('incrementProductInventory', payload)
       }
   },
   modules: {},
@@ -319,6 +436,16 @@ export default new Vuex.Store({
     //add getter for our jokes array, then make a mutation
     getJokes: (state) => state.jokes,
     getHeroes: (state) => state.heroes,
-    getBrews: (state) => state.brews
+    getBrews: (state) => state.brews,
+    getProduct: (state) => (id) => {
+      return state.products.filter(p => p.id === Number(id))[0]
+    },
+    getCartItems: (state) => {
+      return state.cart.map(
+        itemId => state.products.find(
+          product => product.id === itemId
+        )
+      )
+    }
   },
 });

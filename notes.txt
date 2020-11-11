@@ -4,4 +4,95 @@ Add new project and configure hide api key
 Add leaflet and configure
   did leaflet tutorial, except for event emits turns out my app template is wrong
   oh well, fix it in the next tutorial
-Add React link in navbar  
+Add React link in navbar
+
+creating Ostore.vue
+  Mutation, Actions and Store
+    action --> mutation --> updated state
+    actions trigger or commit mutations and mutations trigger a change in state
+    same mutation can be used by multiple actions
+    User performs action, they trigger/dispatch an action which commits a mutation
+      to update the state this in turn gets passed back into the View
+  Single File Components
+    script section is for JS, which defines any component-specific data behavoir
+  Displaying our inventory
+    populate our store with dummy porudcts
+    two keys cart and products
+    computed properties allow us to handle complex JS logic in a more elegant way
+  Curly braces are Vue's template syntax
+  53352-1.jpg
+  Template Breakdown
+    create a list item for each product
+    computed properties dont accept arguments, so we use methods
+
+Part 3
+  Display dummy data, sfc to display information about an individual product
+  Create a new dynamic route
+    :id piece of data and not a raw string use a colon
+  Create the product view
+    this.$store.getter.product(this.$route.params.id)
+      this is a really interesting why to get the product id
+      created the product getters
+    first argument for any getter is always state
+      method-style access (passing in an extra argument, product id)
+      to do that we have to return another function
+  Link the product with <router-link></router-link> @ Ostore.vue
+    name: 'Oproduct',
+    <router-link :to="{ name: 'Oproduct', params: {id:product.id}}">
+    name should reference the name in vue router
+  Flesh out the product view
+  Import the mixin,
+  Register the mixin,
+  User the correct method name
+
+Part 4
+  add a cart page that displays the products a user selects
+  acitons and mutations to update the store when a product is added or removed from cart
+  a badge component that appears/updates when an item is added to the cart
+  Display cart data
+    simply push the id of the product she added into our "cart" array
+      then use a getter to retrieve the rest of the product information "Cart" page
+    write a getter named "cartItems" that maps the array of id's into their respective
+      product object
+      map() allows us to map an arrays contents into something else
+      our getter maps over through the cart array
+      for each itemId in the cart, it should look in the product array to find and return
+        the product whose id is a match
+      find() does this
+    update the cart vue
+  Add to Cart functionality
+    user should be able to add an item to their on each product detail page
+    use a method in Product.vue to dispatch an action
+    create an action in store.js that commits a mutation, also in store.js
+    create a mutation that updates the cart array in store.js
+      commit is needed to move onto the next step of committing a mutation
+      payload is a standard term used to describe data that is getting passed around (product.id),
+      with these arguments able to use a method called "commit" to trigger two mutations
+        addToCart and decrementProductInventory
+    then create the mutations
+    different import for cart, i think its to prevent a rerender
+  Remove from Cart Functionality
+    flesh out item display on "Cart" page, adding a button to remove
+    Add a method to the Cart action that dispatches an action
+    Write an action that commits two mutations, passing the product id
+      one removes from cart, the other increments the quantity back to 1
+    write the mutations
+    store needs an aciton and two new mutations
+      action is called removeFromCart and it commits two mutations removeFromCart
+        and incrementProductInventory
+  Add a cart notification badge
+    more noticeable confirmation for a better user experience
+    Add a notification badge component to our navigation that will appear/update when
+      the cart changes
+    Counter Badge Component
+    Import to our views and use it in the template
+     
+
+
+
+
+
+  
+
+
+    
