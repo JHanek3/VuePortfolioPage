@@ -114,16 +114,34 @@ export default new Vuex.Store({
           "API call to get list and map of some Chicago Brewries. Hover on list to trigger increase icon size fixed, solution found in jokes.",
       },
       {
+        label: 'Simple Node Website',
+        url: 'https://haneknode.herokuapp.com/firstProject',
+        para:
+          "Wanted to start learning more backend. I tried learning Python/Django, but I didn't enjoy crosscripting between python and js."
+      },
+      {
+        label: 'Simple Node Messageboard',
+        url: 'https://haneknode.herokuapp.com/secondProject',
+        para:
+          "Second project of The Odin Project. This is was to make a simple messaging forum with previous messages and the ability to add new ones."
+      },
+      {
         label: 'LocalLibrary Tutorial',
-        url: 'https://haneklibrary.herokuapp.com/catalog',
+        url: 'https://haneknode.herokuapp.com/thirdProject',
         para: 
-        "Needed a refresher on Node and Express. Followed along to the MDN Node/Express tutorial to generate a Library database with CRUD usage."
+          "Needed a refresher on Node and Express. Followed along to the MDN Node/Express tutorial to generate a Library database with CRUD usage."
+      },
+      {
+        label: 'Inventory Application',
+        url: 'https://haneknode.herokuapp.com/fourthProject',
+        para:
+          "Odin Project, similar to LocalLibrary. Uses a mongoDB and mongoose to interact with the database to save items. Even has admin authentication."
       },
       {
         label: "What am I doing now?",
         url: "",
         para:
-        "Right now I'm working through The Odin Project subsection on Node and Express for backend. Upon completion I want to start reviewing angular."
+        "Right now I'm working through The Odin Project subsection on Node and Express for backend. Projects: Secret Santa Website and Full signup/login page."
       }
     ],
     todos: [
