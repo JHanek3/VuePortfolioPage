@@ -99,7 +99,7 @@ export default new Vuex.Store({
       {
         label: "Django API",
         url: "/heroes",
-        para: "Created my own API with a Django backend. All it process is a GET request, link displays the API data."
+        para: "Created my own API with a Django backend. All it processes is a GET request, link displays the API data."
       },
       {
         label: "Leaflet Map Tutorial",
@@ -136,6 +136,12 @@ export default new Vuex.Store({
         url: 'https://haneknode.herokuapp.com/fourthProject',
         para:
           "Odin Project, similar to LocalLibrary. Uses a mongoDB and mongoose to interact with the database to save items. Even has admin authentication."
+      },
+      {
+        label: "Private Member Messanger Forum",
+        url: 'https://haneknode.herokuapp.com/fifthProject',
+        para:
+          "Odin Project, Create a message forum with user authentication. There are four tiers of status: not a user, user, member, admin and the website reacts accordingly. "
       },
       {
         label: "What am I doing now?",
