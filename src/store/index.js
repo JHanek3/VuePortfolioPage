@@ -144,10 +144,16 @@ export default new Vuex.Store({
           "Odin Project, Create a message forum with user authentication. There are four tiers of status: not a user, user, member, admin and the website reacts accordingly. "
       },
       {
+        label: "Fully Functional Login Portal",
+        url: 'https://haneknode.herokuapp.com/sixthProject',
+        para:
+          "Wanted to create a fully functional login portal. Uses bcrypt to store passwords in MongoDB and has an auto-emailer for forgot password."
+      },
+      {
         label: "What am I doing now?",
         url: "",
         para:
-        "Right now I'm working through The Odin Project subsection on Node and Express for backend. Projects: Secret Santa Website and Full signup/login page."
+        "Right now I'm working through The Odin Project subsection on Node and Express for backend. Projects: Secret Santa Website and Interactive Call of Cthulu character page."
       }
     ],
     todos: [
