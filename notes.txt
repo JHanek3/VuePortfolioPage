@@ -87,7 +87,7 @@ Part 4
     Counter Badge Component
     Import to our views and use it in the template
      
-
+#### npm run serve starts in development
 
 
 

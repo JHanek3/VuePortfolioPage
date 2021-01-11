@@ -1,24 +1,12 @@
-# portfolio-page
+# Vue Portfolio-Page
 
-## Project setup
-```
-npm install
-```
+## Explanation
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+This is the repo for all of my Vue projects. Right now there are 9 of them.
+ToDo App, Login Page, Form Validation, Dashboard, Newsapp, Joke API, Online Store,
+Leaflet Map Tutorial, and Leaflet Chicago Breweries.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+If you want to find my non-vue repos, they are titled Node Projects and React
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## TL:DR
+Repo for Vue apps, click on my other Repos for React and Node.

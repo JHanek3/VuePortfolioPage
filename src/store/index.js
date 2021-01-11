@@ -147,14 +147,26 @@ export default new Vuex.Store({
         label: "Fully Functional Login Portal",
         url: 'https://haneknode.herokuapp.com/sixthProject',
         para:
-          "Wanted to create a fully functional login portal. Uses bcrypt to store passwords in MongoDB and has an auto-emailer for forgot password."
+          "Wanted to create a fully functional login portal that uses cookies for authentication. Uses bcrypt to store passwords in MongoDB and has an auto-emailer for forgot password."
+      },
+      {
+        label: 'Quick Build React frontend, Node API backend',
+        url: "https://dadbus.herokuapp.com/",
+        para:
+          "Asked by Dad-o to create a database with a simple File Tree structure to keep track of circuits in a building. This is the prototype I sent to him."
+      },
+      {
+        label: "Call of Cthulu Investigator Website",
+        url: "https://dacthulu.herokuapp.com/",
+        para:
+          "JSON Webtoken authentication, uses a Node API backend and a React frontend. Next implementations are forgot password emails and character creation tables."
       },
       {
         label: "What am I doing now?",
         url: "",
         para:
         "Right now I'm working through The Odin Project subsection on Node and Express for backend. Projects: Secret Santa Website and Interactive Call of Cthulu character page."
-      }
+      },
     ],
     todos: [
       {
